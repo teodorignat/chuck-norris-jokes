@@ -1,0 +1,167 @@
+body { 
+  font-family: 'Permanent Marker', cursive;
+  background: url(../img/bground.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.container {
+  width: 99vw;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-wrapper {
+  height: 90vh;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+
+.appTitle {
+  font-size: 5em;
+  margin: 0;
+  color: #fff;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  animation: fade-in 2s;
+}
+
+.introLogo {
+  margin: 0;
+  width: 650px;
+  animation: rotate 1s;
+}
+
+.btn-start {
+  font-size: 4em;
+  font-weight: 600;
+  width: 350px;
+  padding: 16px;
+  background-color: rgb(252, 180, 46);
+  border-radius: 1em;
+  box-shadow: 5px 8px 0px 0px #000;
+  color: #000;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+  animation: fadebtn 2s;
+}
+
+.jokesimg {
+  width: 300px;
+}
+
+.jokes-wrapper {
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  animation: fade-in 2s;
+}
+
+.jokes {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.jokes-wrapper p {
+  font-family: 'Roboto', cursive;
+  font-size: 1.7em;
+  padding: 1em;
+  margin: 0;
+  text-align: justify;
+  text-shadow: 1.5px 1.5px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 3em;
+  box-shadow: 5px 8px 0px 0px #000;
+}
+
+.random-btn {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2em;
+  width: 50%;
+  padding: 10px;
+  background-color: rgb(252, 180, 46);
+  border-radius: 1em;
+  box-shadow: 5px 8px 0px 0px #000;
+  color: #000;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+
+@keyframes fadebtn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: scale(0) rotate(360deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(-360deg);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .appTitle {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .appTitle { 
+    font-size: 3.5em;
+  }
+
+  .btn-start {
+    width: 80%;
+  }
+  
+  .jokes-wrapper p {
+    font-size: 1.3em;
+  }
+
+  .jokesimg {
+    max-width: 200px;
+  }
+
+  .random-btn {
+    width: 80%;
+  }
+}
