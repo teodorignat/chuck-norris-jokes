@@ -12,7 +12,7 @@ class Jokes extends Component {
         return (
             <>
                 <div className='jokes-wrapper' style={{display: this.props.display}}>
-                    <p>
+                    <p style={{animation:(this.props.nextJoke === true) ? 'rotate 0.5s' : 'none'}}>
                         {this.props.jokes}
                     </p>
                     <img

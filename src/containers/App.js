@@ -11,7 +11,8 @@ class App extends Component {
       stage: null,
       display_intro: 'flex',
       display_jokes: 'none',
-      jokes: {}
+      jokes: {},
+      nextJoke: false
     }
     // this.handleButton = this.handleButton.bind(this);
   }
@@ -31,6 +32,10 @@ class App extends Component {
       fetch('https://api.chucknorris.io/jokes/random')
           .then(response => response.json())
           .then(randomJoke => this.setState({jokes: randomJoke}))
+      this.setState({nextJoke: !this.state.nextJoke})
+      setTimeout(() => {
+        return this.setState({nextJoke: false});
+      }, 500)
     } catch (err) {
           alert('Jokes are not available at the moment! Please try again later.')
     }
@@ -47,7 +52,7 @@ class App extends Component {
   }
 
   render() {
-    const { stage, display_intro , display_jokes,jokes } = this.state;
+    const { stage, display_intro , display_jokes, jokes, nextJoke } = this.state;
     return(
       <>
         <div className='container'>
@@ -59,6 +64,7 @@ class App extends Component {
           display={display_jokes} 
           jokes={jokes.value}
           randombtn={this.handleRandomJoke}
+          nextJoke={nextJoke}
         />
         </div>
       </>
