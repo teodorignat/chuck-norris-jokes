@@ -35,7 +35,7 @@ class App extends Component {
       this.setState({nextJoke: !this.state.nextJoke})
       setTimeout(() => {
         return this.setState({nextJoke: false});
-      }, 500)
+      }, 1000)
     } catch (err) {
           alert('Jokes are not available at the moment! Please try again later.')
     }

@@ -79,6 +79,7 @@ body {
 .jokes-wrapper p {
   font-family: 'Roboto Slab', serif;
   font-size: 1.7em;
+  max-width: 70vw;
   padding: 1em;
   margin: 0;
   text-align: justify;
@@ -165,6 +166,7 @@ body {
   
   .jokes-wrapper p {
     font-size: 1.3em;
+    max-width: 95vw;
     text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
   }
 
