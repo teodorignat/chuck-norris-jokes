@@ -12,6 +12,8 @@ class App extends Component {
       display_intro: 'flex',
       display_jokes: 'none',
       jokes: {},
+      jokesCategory: [],
+      catValue: 'default',
       nextJoke: false
     }
     // this.handleButton = this.handleButton.bind(this);
@@ -22,16 +24,29 @@ class App extends Component {
       fetch('https://api.chucknorris.io/jokes/random')
         .then(response => response.json())
         .then(randomJoke => this.setState({jokes: randomJoke}))
-    } catch (err) {
-      alert('Jokes are not available at the moment! Please try again later.')
-    }
+      } catch (err) {
+        alert('Jokes are not available at the moment! Please try again later.')
+      }
+      try {
+        fetch('https://api.chucknorris.io/jokes/categories')
+          .then(response => response.json())
+          .then(categories => this.setState({jokesCategory: categories}))
+      } catch (err) {
+        alert('Jokes categories are not available at the moment! Please try again later.', err)
+      }
   }
 
   handleRandomJoke = () => {
     try {
-      fetch('https://api.chucknorris.io/jokes/random')
+      if (this.state.catValue === 'default') {
+        fetch('https://api.chucknorris.io/jokes/random')
           .then(response => response.json())
           .then(randomJoke => this.setState({jokes: randomJoke}))
+      } else {
+        fetch(`https://api.chucknorris.io/jokes/random?category=${this.state.catValue}`)
+          .then(response => response.json())
+          .then(catJoke => this.setState({jokes: catJoke}))
+      }
       this.setState({nextJoke: !this.state.nextJoke})
       setTimeout(() => {
         return this.setState({nextJoke: false});
@@ -51,8 +66,12 @@ class App extends Component {
     } 
   }
 
+  handleCategories = (event) => {
+    this.setState({catValue: event.target.value})
+  }
+
   render() {
-    const { stage, display_intro , display_jokes, jokes, nextJoke } = this.state;
+    const { stage, display_intro , display_jokes, jokes, nextJoke, jokesCategory } = this.state;
     return(
       <>
         <div className='container'>
@@ -65,6 +84,8 @@ class App extends Component {
           jokes={jokes.value}
           randombtn={this.handleRandomJoke}
           nextJoke={nextJoke}
+          category={jokesCategory}
+          handleCat={this.handleCategories}
         />
         </div>
       </>
