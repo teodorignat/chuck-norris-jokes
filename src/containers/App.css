@@ -54,7 +54,7 @@ body {
 }
 
 .jokesimg {
-  width: 300px;
+  width: 400px;
 }
 
 .jokes-wrapper {
@@ -62,7 +62,7 @@ body {
   height: 90vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   animation: fade-in 2s;
 }
@@ -95,6 +95,8 @@ body {
   font-size: 2em;
   width: 50%;
   padding: 10px;
+  position: absolute;
+  top: 85%;
   background-color: rgb(252, 180, 46);
   border-radius: 1em;
   box-shadow: 5px 8px 0px 0px #000;
@@ -172,5 +174,6 @@ body {
 
   .random-btn {
     width: 80%;
+    top: 80%;
   }
 }
