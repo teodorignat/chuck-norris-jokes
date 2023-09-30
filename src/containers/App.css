@@ -163,6 +163,7 @@ body {
   
   .jokes-wrapper p {
     font-size: 1.3em;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
   }
 
   .jokesimg {
