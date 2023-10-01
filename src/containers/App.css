@@ -62,7 +62,7 @@ body {
   height: 90vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   animation: fade-in 1.5s;
 }
@@ -177,6 +177,7 @@ body {
 
   .btn-start {
     width: 80%;
+    font-size: 3em;
   }
 
   .jokes-wrapper {
@@ -190,12 +191,13 @@ body {
   }
 
   .jokesimg {
-    max-width: 200px;
+    max-width: 250px;
   }
 
   .random-btn {
     width: 80%;
     top: 78%;
+    font-size: 1.5em;
   }
 
   #category {
