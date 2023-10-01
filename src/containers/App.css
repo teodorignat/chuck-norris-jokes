@@ -76,7 +76,7 @@ body {
 }
 
 .joke {
-  width: 75vw;
+  max-width: 70vw;
   max-height: 38vh;
   margin: 5em 0 0 0;
   padding: 1em;
