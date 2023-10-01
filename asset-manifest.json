@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/chuck-norris-jokes/static/css/main.df5d2d41.css",
-    "main.js": "/chuck-norris-jokes/static/js/main.ef66343b.js",
+    "main.css": "/chuck-norris-jokes/static/css/main.b013c3ab.css",
+    "main.js": "/chuck-norris-jokes/static/js/main.bf805c2b.js",
     "static/js/787.4bd2d3c6.chunk.js": "/chuck-norris-jokes/static/js/787.4bd2d3c6.chunk.js",
     "static/media/jokesimg.png": "/chuck-norris-jokes/static/media/jokesimg.20d2bd4e4c93fa3b87e9.png",
     "static/media/bground.jpg": "/chuck-norris-jokes/static/media/bground.f81426c4ab2df979e7cc.jpg",
     "static/media/intro.png": "/chuck-norris-jokes/static/media/intro.0fc428b90968433293a7.png",
     "index.html": "/chuck-norris-jokes/index.html",
-    "main.df5d2d41.css.map": "/chuck-norris-jokes/static/css/main.df5d2d41.css.map",
-    "main.ef66343b.js.map": "/chuck-norris-jokes/static/js/main.ef66343b.js.map",
+    "main.b013c3ab.css.map": "/chuck-norris-jokes/static/css/main.b013c3ab.css.map",
+    "main.bf805c2b.js.map": "/chuck-norris-jokes/static/js/main.bf805c2b.js.map",
     "787.4bd2d3c6.chunk.js.map": "/chuck-norris-jokes/static/js/787.4bd2d3c6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.df5d2d41.css",
-    "static/js/main.ef66343b.js"
+    "static/css/main.b013c3ab.css",
+    "static/js/main.bf805c2b.js"
   ]
 }
