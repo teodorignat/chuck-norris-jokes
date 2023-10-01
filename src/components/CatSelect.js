@@ -8,7 +8,7 @@ const CatSelect = (props) => {
                 props.category.map((cat, i) => {
                     return(
                         <option key={i} value={cat} >
-                            {cat}
+                            {cat.toUpperCase()}
                         </option>
                     );
                 })
