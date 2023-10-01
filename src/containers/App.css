@@ -77,7 +77,8 @@ body {
 
 .joke {
   width: 75vw;
-  margin: 1em 0 0 0;
+  max-height: 38vh;
+  margin: 5em 0 0 0;
   padding: 1em;
   color: #000;
   background-color: #fff;
@@ -87,7 +88,31 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+
+.joke::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.joke::-webkit-scrollbar:vertical {
+    width: 10px;
+}
+
+.joke::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.joke::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+
+.joke::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 2.5em 0 2.5em 0;
 }
 
 .jokes-wrapper p {
@@ -121,7 +146,7 @@ body {
 .random-btn {
   font-family: 'Permanent Marker', cursive;
   font-size: 2em;
-  width: 50%;
+  width: 500px;
   padding: 10px;
   position: absolute;
   top: 80%;
@@ -136,7 +161,7 @@ body {
   font-size: 2em;
   position: absolute;
   top: 88%;
-  width: 50%;
+  width: 500px;
   padding: 5px;
   border-radius: 1em;
   background-color: rgb(252, 180, 46);
@@ -211,30 +236,6 @@ body {
     width: 95vw;
     max-height: 38vh;
     overflow-y: scroll;
-  }
-
-  .joke::-webkit-scrollbar {
-    -webkit-appearance: none;
-  }
-
-  .joke::-webkit-scrollbar:vertical {
-      width: 10px;
-  }
-
-  .joke::-webkit-scrollbar:horizontal {
-      height: 10px;
-  }
-
-  .joke::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, .5);
-      border-radius: 10px;
-      border: 2px solid #fff;
-  }
-
-  .joke::-webkit-scrollbar-track {
-      border-radius: 10px;
-      background-color: #fff;
-      margin: 2.5em 0 2.5em 0;
   }
   
   .jokes-wrapper p {
