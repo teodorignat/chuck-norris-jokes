@@ -82,18 +82,13 @@ body {
   max-width: 70vw;
   padding: 1em;
   margin: 0;
-  text-align: justify;
+  text-align: left;
   text-shadow: 1.5px 1.5px rgba(0, 0, 0, 0.3);
   background-color: #fff;
   color: #000;
   border: 1px solid #000;
   border-radius: 3em;
   box-shadow: 5px 8px 0px 0px #000;
-}
-
-.bubbles {
-  display: flex;
-  flex-direction: column;
 }
 
 .random-btn {
@@ -185,7 +180,8 @@ body {
   }
   
   .jokes-wrapper p {
-    font-size: 1.3em;
+    font-size: 1.1em;
+    margin-top: 2em;
     max-width: 95vw;
     text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
   }

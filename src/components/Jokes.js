@@ -19,10 +19,6 @@ class Jokes extends Component {
                     <p style={{animation:(this.props.nextJoke === true) ? 'rotate 1s' : 'none'}}>
                         {this.props.jokes}
                     </p>
-                    <div className='bubbles'>
-                        <div className='round-1'></div>
-                        <div className='round-2'></div>
-                    </div>
                     <img
                         className='jokesimg' 
                         src={jokesimg}
