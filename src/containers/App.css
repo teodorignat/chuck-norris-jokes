@@ -6,14 +6,18 @@ body {
   -o-background-size: cover;
   background-size: cover;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-  width: 99vw;
-  height: 95vh;
+  width: 100vw;
+  height: 100vh;
+  padding: 1em;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -53,22 +57,29 @@ body {
   animation: fadebtn 2s;
 }
 
-.jokesimg {
-  width: 400px;
-}
-
 .jokes-wrapper {
-  width: 100vw;
-  height: 95vh;
+  width: 1000px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   animation: fade-in 1.5s;
-  /* border: 1px solid #000;  */
+  border: 1px solid #000; 
+  border-radius: 2em;
+  background-color: rgb(0 0 0 / 0.3);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: -2px 5px 100px #000  ;
+}
+
+.jokesimg {
+  width: 400px;
+  align-self: center;
 }
 
 .jokes {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,10 +87,10 @@ body {
 }
 
 .joke {
-  max-width: 70vw;
-  max-height: 38vh;
-  margin: 5em 0 0 0;
-  padding: 1em;
+  max-width: 85%;
+  height: 30vh;
+  margin: 1em 0 0 0;
+  padding: 2em;
   color: #000;
   background-color: #fff;
   border: 1px solid #000;
@@ -89,6 +100,7 @@ body {
   justify-content: center;
   align-items: center;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .joke::-webkit-scrollbar {
@@ -117,10 +129,13 @@ body {
 
 .jokes-wrapper p {
   font-family: 'Roboto Slab', serif;
-  font-size: 1.7em;
+  font-size: 1.5em;
   max-width: 100vw;
   text-align: left;
+  word-wrap: break-word;
+  word-break: normal ;
   text-shadow: 1.5px 1.5px rgba(0, 0, 0, 0.3);
+  margin: auto;
 }
 
 .round-div {
@@ -143,13 +158,53 @@ body {
   box-shadow: 2px 2px 0px 0px #000;
 }
 
+.button-box {
+  width: 500px;
+  position: absolute;
+  top: 72vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7em;
+}
+
+.search {
+  display: flex;
+  gap: 10px;
+}
+
+.searchBar {
+  width: 90%;
+  padding: 1em;
+  background-color: rgb(255, 255, 255);
+  border-radius: 2em;
+  box-shadow: 5px 8px 0px 0px #000;
+  color: #000;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+
+.searchBar::placeholder {
+  color: #000;
+}
+
+.searchButton {
+  width: 20%;
+  background-color: rgb(252, 180, 46);
+  border-radius: 2em;
+  box-shadow: 5px 8px 0px 0px #000;
+  color: #000;
+}
+
+.searchLogo {
+  width: 40%;
+}
+
 .random-btn {
   font-family: 'Permanent Marker', cursive;
   font-size: 2em;
   width: 500px;
   padding: 10px;
-  position: absolute;
-  top: 80%;
   background-color: rgb(252, 180, 46);
   border-radius: 1em;
   box-shadow: 5px 8px 0px 0px #000;
@@ -159,8 +214,6 @@ body {
 
 #category {
   font-size: 2em;
-  position: absolute;
-  top: 88%;
   width: 500px;
   padding: 5px;
   border-radius: 1em;
@@ -207,13 +260,30 @@ body {
   }
 }
 
+@media only screen and (max-width: 1056px) {
+  .jokes-wrapper  {
+    width: 90vw;
+  }
+
+}
+
 @media only screen and (max-width: 920px) {
   .appTitle {
     text-align: center;
   }
+
+  .jokes-wrapper p {
+    font-size: 1.2em;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+  }
+
 }
 
 @media only screen and (max-width: 650px) {
+  .container {
+    padding: 1em;
+  }
+
   .intro-wrapper {
     height: 85vh;
   }
@@ -228,35 +298,48 @@ body {
   }
 
   .jokes-wrapper {
-    height: 99vh;
-    overflow-y: hidden;
+    height: 95vh;
+    width: 95vw;
+    overflow: hidden;
   }
 
   .joke {
-    width: 95vw;
+    width: 100vw;
     max-height: 38vh;
     overflow-y: scroll;
   }
   
   .jokes-wrapper p {
-    margin: auto;
     font-size: 1.1em;
     text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
   }
 
   .jokesimg {
-    max-width: 250px;
+    max-width: 100%;
+  }
+
+  .button-box {
+    width: 80vw;
+    top: 65vh;
+  }
+
+  .searchBar {
+    width: 100%;
   }
 
   .random-btn {
-    width: 80%;
-    top: 78%;
+    width: 100%;
+    top: 80%;
     font-size: 1.5em;
   }
 
   #category {
-    width: 80%;
+    width: 100%;
     font-size: 1.5em;
     padding: 6px;
   }
+}
+
+@media only screen and (max-width: 400px) {
+
 }

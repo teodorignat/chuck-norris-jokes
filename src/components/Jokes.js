@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CatSelect from './CatSelect';
+import SearchBar from './SearchBar'
 import jokesimg from '../img/jokesimg.png';
 
 class Jokes extends Component {
@@ -8,7 +9,6 @@ class Jokes extends Component {
         this.state = {
             display_img: 'none',
             categories: [],
-            catValue: 'default'
         }
     }
 
@@ -19,7 +19,8 @@ class Jokes extends Component {
                     <div className='jokes' style={{animation:(this.props.nextJoke === true) ? 'rotate 1s' : 'none'}}>
                         <div className='joke'>
                             <p>
-                                {this.props.jokes}
+                                {this.props.jokes ? this.props.jokes.value : 'Chuck Norris has no jokes with these letters. Sorry!'}
+                                
                             </p>    
                         </div>
                         <div className='round-div'></div>
@@ -30,16 +31,22 @@ class Jokes extends Component {
                         src={jokesimg}
                         alt="cowboy chuck norris" 
                     />
-                    <button 
-                        className='random-btn grow'
-                        onClick={this.props.randombtn}
-                    >
-                        Random Joke
-                    </button>   
-                    <CatSelect 
-                        category={this.props.category} 
-                        handleCat={this.props.handleCat} 
-                    />
+                    <div className='button-box'>
+                        <SearchBar 
+                            search={this.props.search} 
+                            handleButton={this.props.searchButton} 
+                        />
+                        <button 
+                            className='random-btn grow'
+                            onClick={this.props.randombtn}
+                        >
+                            Random Joke
+                        </button>   
+                        <CatSelect 
+                            category={this.props.category} 
+                            handleCat={this.props.handleCat} 
+                        />
+                    </div>
                 </div>
             </>
         );
