@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import Joke from './Joke';
 import CatSelect from './CatSelect';
-import SearchBar from './SearchBar'
+import SearchBar from './SearchBar';
 import jokesimg from '../img/jokesimg.png';
 
 class Jokes extends Component {
@@ -16,16 +17,12 @@ class Jokes extends Component {
         return (
             <>
                 <div className='jokes-wrapper' style={{display: this.props.display}}>
-                    <div className='jokes' style={{animation:(this.props.nextJoke === true) ? 'rotate 1s' : 'none'}}>
-                        <div className='joke'>
-                            <p>
-                                {this.props.jokes ? this.props.jokes.value : 'Chuck Norris has no jokes with these letters. Sorry!'}
-                                
-                            </p>    
-                        </div>
-                        <div className='round-div'></div>
-                        <div className='round-div2'></div>
-                    </div>
+                    <Joke 
+                        nextJoke={this.props.nextJoke}
+                        searchJokes={this.props.searchJokes}
+                        jokes={this.props.jokes}
+                        queryJokes={this.props.queryJokes}
+                    />
                     <img
                         className='jokesimg' 
                         src={jokesimg}

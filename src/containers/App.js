@@ -14,7 +14,8 @@ class App extends Component {
       jokes: {},
       jokesCategory: [],
       catValue: 'default',
-      searchJokes: { result: [{value: 'Only Chuck Norris can get the answer from first try. Press the button one more time.'}]},
+      searchJokes: false,
+      queryJokes: [],
       searchfield: '',
       results: false,
       countResult: 0,
@@ -78,28 +79,32 @@ class App extends Component {
     }
 
     handleSearchButton = () => {
-      const { searchfield, searchJokes, countResult, jokes, results } = this.state;
+      const { searchfield, searchJokes, countResult, queryJokes} = this.state;
       try {
         if (searchfield.length > 0) {
           this.fetchSearchJokes();
-          this.setState({results: searchJokes.total});
-          this.setState({countResult: countResult + 1});
-          this.setState({jokes: searchJokes.result[countResult]});
-          if (!jokes) {
-            this.setState({jokes: searchJokes.value});
+          if (searchJokes && searchJokes.total > 0) {
+            setTimeout(() => {
+              searchJokes.result.map(queryjoke => {
+                return queryJokes.push(queryjoke)
+              })
+              console.log('query', queryJokes);
+              this.setState({jokes: queryJokes[Math.floor(Math.random() * searchJokes.total)]});
+              this.setState({queryJokes: []});
+              this.setState({countResult: countResult + 1});
+            }, 200)
+          } else if (searchJokes.total === 0 ) {
+            this.setState({jokes: { value: 'There are no jokes with your word/s included.'}});
+          } else {
+            this.setState({jokes: { value: 'Press the button one more time, Chuck Norris gets the answer first.'}});
+            
           }
         }
-        if (results === 0) {
-          setTimeout(() => {
-            this.setState({jokes: {value: 'Chuck Norris has no jokes with these letters.'}})
-            this.setState({results: searchJokes.total})
-          }, 500)
-        }
+        
         this.setState({nextJoke: !this.state.nextJoke})
         setTimeout(() => {
           return this.setState({nextJoke: false});
         }, 1000)
-        console.log(results);
         
       } catch (error) {
         alert(`Chuck Norris is BUSY right now! Try again!`);
@@ -136,7 +141,7 @@ class App extends Component {
 
 
   render() {
-    const { stage, display_intro , display_jokes, jokes, nextJoke, jokesCategory } = this.state;
+    const { stage, display_intro , display_jokes, jokes, nextJoke, jokesCategory, searchJokes, searchfield, queryJokes } = this.state;
     return(
       <>
         <div className='container'>
@@ -151,8 +156,11 @@ class App extends Component {
           nextJoke={nextJoke}
           category={jokesCategory}
           handleCat={this.handleCategories}
+          searchfield={searchfield}
           search={this.handleSearch}
+          searchJokes={searchJokes}
           searchButton={this.handleSearchButton}
+          queryJokes={queryJokes}
         />
         </div>
       </>
