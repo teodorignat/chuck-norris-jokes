@@ -97,7 +97,7 @@ class App extends Component {
           } else if (searchJokes.total === 0) {
             this.setState({ jokes: { value: 'There are no jokes with your word/s included.' } });
           } else {
-            this.setState({ jokes: { value: 'Press the button one more time, Chuck Norris gets the answer first.' } });
+            this.setState({ jokes: { value: 'Your text should not include only spaces or special characters!' } });
           }
     
           this.setState({ nextJoke: !this.state.nextJoke });
