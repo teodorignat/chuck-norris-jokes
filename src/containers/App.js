@@ -15,11 +15,9 @@ class App extends Component {
       jokesCategory: [],
       catValue: 'default',
       searchJokes: false,
-      newQueryJokes: [],
       queryJokes: [],
       searchfield: '',
       results: false,
-      countResult: 0,
       nextJoke: false
     }
   }
@@ -71,7 +69,7 @@ class App extends Component {
 
     fetchSearchJokes = () => {
       try {
-        return fetch(`https://api.chucknorris.io/jokes/search?query=${this.state.searchfield}`)
+        return fetch(`https://api.chucknorris.io/jokes/search?query=${this.state.searchfield.toLowerCase()}`)
           .then(response => response.json())
           .then(searchJoke => {
             this.setState({searchJokes: searchJoke});
@@ -83,28 +81,36 @@ class App extends Component {
     }
 
     handleSearchButton = () => {
-      const { searchfield, countResult, queryJokes} = this.state;
-    
-      if (searchfield.length > 0) {
-        this.fetchSearchJokes().then(searchJokes => {
-          if (searchJokes && searchJokes.total > 0) {
-            const newQueryJokes = [...queryJokes, ...searchJokes.result];
-            this.setState({
-              jokes: newQueryJokes[Math.floor(Math.random() * searchJokes.total)],
-              queryJokes: [],
-              countResult: countResult + 1
-            });
-          } else if (searchJokes.total === 0) {
-            this.setState({ jokes: { value: 'There are no jokes with your word/s included.' } });
-          } else {
-            this.setState({ jokes: { value: 'Your text should not include only spaces or special characters!' } });
-          }
-    
+      const { searchfield, queryJokes} = this.state;
+      try {
+        if (searchfield.toLowerCase() === 'calin') {
           this.setState({ nextJoke: !this.state.nextJoke });
-          setTimeout(() => {
-            return this.setState({ nextJoke: false });
-          }, 1000);
-        });
+            setTimeout(() => {
+              return this.setState({ nextJoke: false });
+            }, 1000);
+          return  this.setState({jokes: { value: `Calin (a.k.a Frank Castle) is the biggest fear of Chuck Norris! Shhh! You don't know that from me! Good Luck!`}});
+        } else if (searchfield.length > 0) {
+          this.fetchSearchJokes().then(searchJokes => {
+            if (searchJokes && searchJokes.total > 0) {
+              const newQueryJokes = [...queryJokes, ...searchJokes.result];
+              this.setState({
+                jokes: newQueryJokes[Math.floor(Math.random() * searchJokes.total)],
+                queryJokes: [],
+              });
+            } else if (searchJokes.total === 0) {
+              this.setState({ jokes: { value: 'There are no jokes with your word/s included.' } });
+            } else {
+              this.setState({ jokes: { value: `${searchJokes.error} - ${searchJokes.message}` } });
+            }
+      
+            this.setState({ nextJoke: !this.state.nextJoke });
+            setTimeout(() => {
+              return this.setState({ nextJoke: false });
+            }, 1000);
+          });
+        }
+      } catch (err) {
+        alert('Something went wrong! Please try again!')
       }
     }
 
@@ -129,8 +135,10 @@ class App extends Component {
     if (this.state.display_intro === 'flex') {
       this.setState({stage: 'Start'});
       setTimeout(() => {
-        this.setState({ display_intro: 'none' });
-        this.setState({display_jokes: 'flex'})
+        this.setState({ 
+          display_intro: 'none',
+          display_jokes: 'flex'
+       });
       }, 1000)
     } 
   }

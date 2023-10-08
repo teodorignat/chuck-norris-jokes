@@ -6,7 +6,7 @@ const Joke = (props) => {
             <div className='joke'>
                 <p>
                     { props.jokes.value }
-                </p>    
+                </p>
             </div>
             <div className='round-div'></div>
             <div className='round-div2'></div>
