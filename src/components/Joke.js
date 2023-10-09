@@ -3,7 +3,7 @@ import jokeIcon from '../img/joke-icon.png'
 
 const Joke = (props) => {
     return (
-        <div className='jokes' style={{animation:(props.nextJoke === true) ? 'rotate 1s' : 'none'}}>
+        <div className='jokes' style={{animation:(props.nextJoke === true) ? 'fade-out-right 0.3s' : 'fade-in-left 0.5s'}}>
             <div className='joke'>
                 <img 
                     className='jokeIcon' 

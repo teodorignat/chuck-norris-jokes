@@ -87,7 +87,7 @@ class App extends Component {
           this.setState({ nextJoke: !this.state.nextJoke });
             setTimeout(() => {
               return this.setState({ nextJoke: false });
-            }, 1000);
+            }, 280);
           return  this.setState({jokes: { value: `Calin (a.k.a Frank Castle) is the biggest fear of Chuck Norris! Shhh! You don't know that from me! Good Luck!`}});
         } else if (searchfield.length > 0) {
           this.fetchSearchJokes().then(searchJokes => {
@@ -106,7 +106,7 @@ class App extends Component {
             this.setState({ nextJoke: !this.state.nextJoke });
             setTimeout(() => {
               return this.setState({ nextJoke: false });
-            }, 1000);
+            }, 280);
           });
         }
       } catch (err) {
@@ -125,7 +125,7 @@ class App extends Component {
         this.setState({nextJoke: !this.state.nextJoke})
         setTimeout(() => {
           return this.setState({nextJoke: false});
-        }, 1000)
+        }, 280)
     } catch (err) {
           alert('Jokes are not available at the moment! Please try again later.');
     }
@@ -139,7 +139,7 @@ class App extends Component {
           display_intro: 'none',
           display_jokes: 'flex'
        });
-      }, 1000)
+      }, 280)
     } 
   }
 

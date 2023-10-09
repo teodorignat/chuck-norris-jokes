@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Joke from './Joke';
-import CatSelect from './CatSelect';
-import SearchBar from './SearchBar';
+import ButtonBox from './ButtonBox';
 import jokesimg from '../img/jokesimg.png';
 
 class Jokes extends Component {
@@ -17,33 +16,26 @@ class Jokes extends Component {
         return (
             <>
                 <div className='jokes-wrapper' style={{display: this.props.display}}>
-                    <Joke 
-                        nextJoke={this.props.nextJoke}
-                        searchJokes={this.props.searchJokes}
-                        jokes={this.props.jokes}
-                        queryJokes={this.props.queryJokes}
-                    />
-                    <img
-                        className='jokesimg' 
-                        src={jokesimg}
-                        alt="cowboy chuck norris" 
-                    />
-                    <div className='button-box'>
-                        <SearchBar 
-                            search={this.props.search} 
-                            handleButton={this.props.searchButton} 
+                    <div className='jokes-content'>
+                        <Joke 
+                            nextJoke={this.props.nextJoke}
+                            searchJokes={this.props.searchJokes}
+                            jokes={this.props.jokes}
+                            queryJokes={this.props.queryJokes}
                         />
-                        <button 
-                            className='random-btn grow'
-                            onClick={this.props.randombtn}
-                        >
-                            Random Joke
-                        </button>   
-                        <CatSelect 
-                            category={this.props.category} 
-                            handleCat={this.props.handleCat} 
+                        <img
+                            className='jokesimg' 
+                            src={jokesimg}
+                            alt="cowboy chuck norris" 
                         />
                     </div>
+                    <ButtonBox
+                        search={this.props.search} 
+                        handleButton={this.props.searchButton}
+                        randombtn={this.props.randombtn}
+                        category={this.props.category} 
+                        handleCat={this.props.handleCat} 
+                    />
                 </div>
             </>
         );
