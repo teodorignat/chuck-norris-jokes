@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/chuck-norris-jokes/static/css/main.5a8a9ee3.css",
-    "main.js": "/chuck-norris-jokes/static/js/main.6c6ad6b5.js",
+    "main.css": "/chuck-norris-jokes/static/css/main.378a348d.css",
+    "main.js": "/chuck-norris-jokes/static/js/main.e4ad5d73.js",
     "static/js/787.4bd2d3c6.chunk.js": "/chuck-norris-jokes/static/js/787.4bd2d3c6.chunk.js",
-    "static/media/jokesimg.png": "/chuck-norris-jokes/static/media/jokesimg.20d2bd4e4c93fa3b87e9.png",
-    "static/media/bground.jpg": "/chuck-norris-jokes/static/media/bground.f81426c4ab2df979e7cc.jpg",
-    "static/media/intro.png": "/chuck-norris-jokes/static/media/intro.0fc428b90968433293a7.png",
-    "static/media/searchLogo.png": "/chuck-norris-jokes/static/media/searchLogo.2550c90b4467ebb74694.png",
+    "static/media/bground.png": "/chuck-norris-jokes/static/media/bground.694ce0545877faba2812.png",
+    "static/media/intro.png": "/chuck-norris-jokes/static/media/intro.0b704c9a7b256a0ddeb5.png",
+    "static/media/joke-icon.png": "/chuck-norris-jokes/static/media/joke-icon.79e6c97ed17cd7e0acc7.png",
+    "static/media/jokesimg.png": "/chuck-norris-jokes/static/media/jokesimg.a0daa48945f18b892eab.png",
+    "static/media/searchLogo.png": "/chuck-norris-jokes/static/media/searchLogo.4d34fa7024881e51706f.png",
     "index.html": "/chuck-norris-jokes/index.html",
-    "main.5a8a9ee3.css.map": "/chuck-norris-jokes/static/css/main.5a8a9ee3.css.map",
-    "main.6c6ad6b5.js.map": "/chuck-norris-jokes/static/js/main.6c6ad6b5.js.map",
+    "main.378a348d.css.map": "/chuck-norris-jokes/static/css/main.378a348d.css.map",
+    "main.e4ad5d73.js.map": "/chuck-norris-jokes/static/js/main.e4ad5d73.js.map",
     "787.4bd2d3c6.chunk.js.map": "/chuck-norris-jokes/static/js/787.4bd2d3c6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5a8a9ee3.css",
-    "static/js/main.6c6ad6b5.js"
+    "static/css/main.378a348d.css",
+    "static/js/main.e4ad5d73.js"
   ]
 }
