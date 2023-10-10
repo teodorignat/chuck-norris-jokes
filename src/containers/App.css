@@ -315,7 +315,7 @@ body {
   }
   100% {
     opacity: 1;
-    transform: translateX(1000px);
+    transform: translateX(150%);
   }
 }
 

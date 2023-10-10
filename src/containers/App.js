@@ -139,7 +139,7 @@ class App extends Component {
           display_intro: 'none',
           display_jokes: 'flex'
        });
-      }, 280)
+      }, 1000)
     } 
   }
 
